@@ -4,7 +4,7 @@
 *  No part of this assignment has been copied manually or electronically from any other source
 *  (including web sites) or distributed to other students.
 * 
-*  Name: Jeremy Dela Cruz   Student ID: 159161223   Date: May 24, 2024
+*  Name: Jeremy Dela Cruz   Student ID: 159161223   Date: May 28, 2024
 *
 ********************************************************************************/ 
 
@@ -12,8 +12,6 @@ const collegeData = require('./modules/collegeData.js');
 
 collegeData.initialize()
     .then(() => {
-        console.log("Initialization successful");
-
         collegeData.getAllStudents()
             .then(students => {
                 console.log(`Successfully retrieved ${students.length} students`);
