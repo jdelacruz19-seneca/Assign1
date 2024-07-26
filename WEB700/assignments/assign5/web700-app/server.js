@@ -12,9 +12,14 @@
 
 var HTTP_PORT = process.env.PORT || 8080;
 var express = require("express");
+const exphbs = require('express-handlebars');
 var app = express();
+const { initialize } = require('./modules/collegeData')
 var collegeData = require('./modules/collegeData');
 var path = require('path');
+
+app.engine('.hbs', exphbs.engine({ extname: '.hbs', defaultLayout: 'main' }));
+app.set('view engine', '.hbs');
 
 
 // setup a 'route' to listen on the default url path
@@ -28,22 +33,38 @@ app.use(express.static(__dirname + '/public'));
 
 app.set('views', __dirname + '/views');
 
-
-app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, 'views', 'home.html'));
+app.get('/', (req, res) => {
+    res.render('home');
 });
 
-app.get("/about", (req, res) => {
-    res.sendFile(path.join(__dirname, 'views', 'about.html'));
+app.get('/about', (req, res) => {
+    res.render('about');
 });
 
-app.get("/htmlDemo", (req, res) => {
-    res.sendFile(path.join(__dirname, 'views', 'htmlDemo.html'));
+app.get('/htmlDemo', (req, res) => {
+    res.render('htmlDemo');
 });
 
-app.get("/students/add", (req, res) => {
-    res.sendFile(path.join(__dirname, "views/addStudent.html"));
+app.get('/students/add', (req, res) => {
+    res.render('addStudent');
 });
+
+
+// app.get("/", (req, res) => {
+//     res.sendFile(path.join(__dirname, 'views', 'home.html'));
+// });
+
+// app.get("/about", (req, res) => {
+//     res.sendFile(path.join(__dirname, 'views', 'about.html'));
+// });
+
+// app.get("/htmlDemo", (req, res) => {
+//     res.sendFile(path.join(__dirname, 'views', 'htmlDemo.html'));
+// });
+
+// app.get("/students/add", (req, res) => {
+//     res.sendFile(path.join(__dirname, "views/addStudent.html"));
+// });
 
 app.get("/students", (req, res) => {
     if (req.query.course) {
