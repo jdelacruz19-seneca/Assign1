@@ -1,12 +1,10 @@
 /*********************************************************************************
-*  WEB700 – Assignment 04
+*  WEB700 – Assignment 05
 *  I declare that this assignment is my own work in accordance with Seneca  Academic Policy.  No part 
 *  of this assignment has been copied manually or electronically from any other source 
 *  (including 3rd party web sites) or distributed to other students.
 * 
-*  Name: Jeremy Dela Cruz Student ID: 159161223 Date: July 5, 2024
-*
-*  Online (vercel) Link: jdelacruz19-hgoy5vy6c-jeremy-dela-cruzs-projects.vercel.app
+*  Name: Jeremy Dela Cruz Student ID: 159161223 Date: July 26, 2024
 *
 ********************************************************************************/ 
 
