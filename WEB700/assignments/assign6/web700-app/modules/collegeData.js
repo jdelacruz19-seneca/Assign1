@@ -1,4 +1,5 @@
 const Sequelize = require('sequelize');
+require('pg'); // explicitly require the "pg" module
 
 var sequelize = new Sequelize('SenecaDB', 'SenecaDB_owner', 'y5Wr9iMYkFod', {
     host: 'ep-flat-voice-a5not18r.us-east-2.aws.neon.tech',
